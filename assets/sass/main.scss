@@ -1,0 +1,20 @@
+@import "lib/vars";
+@import "lib/reboot";
+@import "lib/keyframes";
+@import "lib/fontface";
+
+@import "lib/colors";
+@import "lib/typo";
+@import "lib/utils";
+
+@import "partials/layout";
+@import "partials/modals";
+
+
+
+
+* {
+    &:not(a) {
+        border: 1px solid pink;
+    }
+}
