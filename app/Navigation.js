@@ -153,6 +153,13 @@ const navigationTo = (getTo, animationType) => {
         case 'splash_to_menu':
             animation_SplashToMenu(getTo);
             break;
+        
+        /**
+         * Desde la pantalla menu al juego
+         */
+        case 'menu_to_game':
+            animation_MenuToMain(getTo);
+            break;
 
 
         /**

@@ -80,6 +80,40 @@ const animation_SplashToMenu = () => {
         }, '-=750')
 };
 
+const animation_MenuToMain = (getTo) => {
+    console.log("Me animo! Del menú al juego!")
+    // Selecciona elementos a animar
+    const from = GAME_UI.pages.swiperContainer; // swiperContainer
+    const to = GAME_UI.pages.main; // Donde se aloja el juego
+
+    // Necesitas meter algo de CSS antes de la animación??
+    anime.set(to, {
+        visibility: 'visible', 
+        translateY: '-100%', 
+        opacity: 0
+    });
+    // Anima!
+    animation_layout = anime.timeline({
+        duration: 750,
+        easing: 'easeInOutSine'
+    });
+    animation_layout
+        .add({
+            targets: [from], 
+            translateY: '100%', 
+            opacity: 0
+        })
+        .add({
+            targets: [to], 
+            translateY: 0, 
+            opacity: 1
+        }, '-=750')
+    // callback al terminar animación ( se inicia el juego )
+    animation_layout.finished.then(() => {
+        game = new Game();
+        game.start();
+    })
+}
 
 /**
  * 
