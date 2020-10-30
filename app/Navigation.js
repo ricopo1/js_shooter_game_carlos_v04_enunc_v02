@@ -104,7 +104,11 @@ const swipeTo = (getTo = '#menu_page') => {
     /**
      * Navegar con swipes
      */
-    //swiper.slideTo(...);    
+    let sections = document.querySelectorAll('.swiper_item');
+    // Array.from => Devuelve un Array a partir de un objeto con propiedad length o un objeto iterable
+    // findInex => El método findIndex() devuelve el índice del primer elemento de un array que cumpla con la función de prueba proporcionada
+    let index = Array.from(sections).findIndex(section => '#' + section.id == getTo);
+    swiper.slideTo(index);
 
     if (!swiper) {
         navigationErrHandler(`No has programado la funcionalidad de Swiper todavía!`);

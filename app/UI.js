@@ -32,7 +32,11 @@ let initToggles = () => {
  * La navegación entre las página settings, menu, leaderboard es con Swiper
  */
 let initSwiper = () => {
-    //swiper = new Swiper(...);
+    swiper = new Swiper(swipeSection, {
+        initialSlide: 1,
+        speed: 500,
+        spaceBetween: 100
+    });
 };
 
 
