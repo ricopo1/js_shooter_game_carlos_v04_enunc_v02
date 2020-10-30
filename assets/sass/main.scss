@@ -18,3 +18,19 @@
         border: 1px solid pink;
     }
 }
+
+#menu_page,
+#settings_page,
+#leaderboard_page {
+    display: flex;
+    flex-direction: column;
+
+    header, footer, .hscore {
+        width: 100%;
+    }
+
+    .main, .slider, .lboard {
+        width: 100%;
+        flex-basis: 100%;
+    }
+}
