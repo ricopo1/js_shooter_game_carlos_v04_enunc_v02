@@ -97,6 +97,7 @@ const animation_MenuToMain = (getTo) => {
         duration: 750,
         easing: 'easeInOutSine'
     });
+
     animation_layout
         .add({
             targets: [from], 
@@ -115,11 +116,47 @@ const animation_MenuToMain = (getTo) => {
     })
 }
 
+const animation_MainToMenu = (getTo) => {
+    const from = GAME_UI.pages.main;
+    const to = GAME_UI.pages.swiperContainer;
+
+    anime.set(to, {
+        visibility: 'visible', 
+        translateY: '100%', 
+        opacity: 0
+    });
+
+    animation_layout = anime.timeline({
+        duration: 750,
+        easing: 'easeInOutSine'
+    });
+    
+    animation_layout
+        .add({
+            targets: [from], 
+            translateY: '-100%', 
+            opacity: 0
+        })
+        .add({
+            targets: [to], 
+            translateY: 0, 
+            opacity: 1
+        }, '-=750')
+    
+        animation_layout.finished.then(() => {
+            anime.set(from, {
+                visibility: 'hidden'
+            });
+            game.ended = true;
+            document.querySelector('.game').innerHTML = '';
+        })
+};
+
 /**
  * 
  * Ejemplo de un popup, como vemos, es lo mismo....
  */
-const animation_PopupPause = () => {
+const animation_PopupPause = (getTo) => {
     const popup = GAME_UI.modalWindows.pause;
 
     anime.set(popup, {
@@ -137,6 +174,74 @@ const animation_PopupPause = () => {
         targets: popup,
         translateY: '0%',
         opacity: 1
+    });
+
+    animation_layout.finished.then(() => {
+        game.pauseOrResume();
+    });
+};
+
+const animation_PopupContinue = (getTo) => {
+    const popup = GAME_UI.modalWindows.pause;
+
+    animation_layout = anime.timeline({
+        duration: 300,
+        easing: 'easeOutQuad'
+    });
+
+    animation_layout.add({
+        targets: popup,
+        translateY: '-20%',
+        opacity: 0
+    });
+
+    animation_layout.finished.then(() => {
+        game.pauseOrResume();
+        anime.set(popup, {
+            visibility: 'hidden'
+        });
+    });
+};
+
+const animation_ConfirmIn = (getTo) => {
+    const popup = document.querySelector('#modal_confirm');
+
+    anime.set(popup, {
+        translateY: '-20%', 
+        opacity: 0, 
+        visibility: 'visible'
+    });
+
+    animation_layout = anime.timeline({
+        duration: 300,
+        easing: 'easeOutQuad'
+    });
+
+    animation_layout.add({
+        targets: popup,
+        translateY: '0%',
+        opacity: 1
+    });
+};
+
+const animation_ConfirmOut = (getTo) => {
+    const popup = document.querySelector('#modal_confirm');
+
+    animation_layout = anime.timeline({
+        duration: 300,
+        easing: 'easeOutQuad'
+    });
+
+    animation_layout.add({
+        targets: popup,
+        translateY: '-20%',
+        opacity: 0
+    });
+
+    animation_layout.finished.then(() => {
+        anime.set(popup, {
+            visibility: 'hidden'
+        });
     });
 };
 

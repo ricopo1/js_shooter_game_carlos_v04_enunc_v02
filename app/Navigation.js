@@ -160,6 +160,12 @@ const navigationTo = (getTo, animationType) => {
         case 'menu_to_game':
             animation_MenuToMain(getTo);
             break;
+        
+        case 'game_out':
+            animation_ConfirmOut(getTo);
+            animation_PopupContinue(getTo);
+            animation_MainToMenu(getTo);
+            break;
 
 
         /**
@@ -194,11 +200,20 @@ const popUpToggle = (getTo, animationType) => {
          */
         case 'pause_modal':
             animation_PopupPause(getTo);
-            animation_layout.finished.then(() => {
-                game.pauseOrResume();
-            });
             break;
 
+        case 'resume_modal':
+            animation_PopupContinue(getTo);
+            break;
+
+        case 'confirm_modal_in':
+            animation_ConfirmIn(getTo);
+            break;
+
+        case 'confirm_modal_out':
+            animation_ConfirmOut(getTo);
+            animation_PopupContinue(getTo);
+            break;
 
         /**
          * ErrHandler
