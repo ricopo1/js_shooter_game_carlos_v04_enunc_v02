@@ -769,4 +769,35 @@ a {
       flex-basis: 100%;
   width: 100%;
 }
+
+#splas_img {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -ms-flex-preferred-size: 100%;
+      flex-basis: 100%;
+}
+
+progress {
+  margin-left: 10px;
+  position: relative;
+  top: 3px;
+  border-radius: 5px;
+  border: 1px solid black;
+}
+
+progress::-webkit-progress-value {
+  background: lightblue;
+}
+
+progress::-webkit-progress-bar {
+  background: #eee;
+}
 /*# sourceMappingURL=main.css.map */

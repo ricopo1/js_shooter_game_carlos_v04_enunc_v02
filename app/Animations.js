@@ -11,6 +11,18 @@
  * 
  * 
  */
+
+
+const animation_ProgressBar = () => {
+
+    animateProgress = anime({
+        targets: 'progress',
+        value: 100,
+        easing: 'linear',
+        autoplay: true
+    });
+};
+
 const animation_FadeIn = () => {
     // Selecciona elementos a animar
     const splash = GAME_UI.pages.splash;

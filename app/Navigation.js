@@ -151,7 +151,10 @@ const navigationTo = (getTo, animationType) => {
          * Desde la pantalla splash al menu
          */
         case 'splash_to_menu':
-            animation_SplashToMenu(getTo);
+            animation_ProgressBar();
+            setTimeout(() => {
+                animation_SplashToMenu(getTo); 
+            }, 2000);
             break;
         
         /**

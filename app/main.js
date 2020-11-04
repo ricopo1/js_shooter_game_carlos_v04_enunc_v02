@@ -9,7 +9,7 @@ let game;
 
 // Valores constantes
 const OPPONENT_HEIGHT = 5,
-    OPPONENT_PICTURE = "assets/img/malo.png",
+    OPPONENT_PICTURE = "assets/img/characters/char_01.png",
     OPPONENT_PICTURE_DEAD = "assets/img/malo_muerto.png",
     OPPONENT_SPEED = 5,
     OPPONENT_WIDTH = 5,
@@ -19,14 +19,14 @@ const OPPONENT_HEIGHT = 5,
     KEY_SHOOT = "SHOOT",
     MIN_TOUCHMOVE = 20,
     PLAYER_HEIGHT = 5,
-    PLAYER_PICTURE = "assets/img/bueno.png",
+    PLAYER_PICTURE = "assets/img/characters/char_02.png",
     PLAYER_PICTURE_DEAD = "assets/img/bueno_muerto.png",
     PLAYER_SPEED = 20,
     PLAYER_WIDTH = 5,
     SHOT_HEIGHT = 1.5,
     SHOT_SPEED = 20,
     SHOT_PICTURE_PLAYER = "assets/img/shot1.png",
-    SHOT_PICTURE_OPPONENT = "assets/img/shot2.png",
+    SHOT_PICTURE_OPPONENT = "assets/img/characters/char_03.png",
     SHOT_WIDTH = 1.5;
 
 

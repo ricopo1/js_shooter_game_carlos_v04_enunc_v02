@@ -51,3 +51,33 @@
         width: 100%;
     }
 }
+
+#splas_img {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex-basis: 100%;
+}
+
+progress {
+    margin-left: 10px;
+    position: relative;
+    top: 3px;
+    border-radius: 5px;
+    border: 1px solid black;
+
+    &::-webkit-progress-value {
+        background: lightblue;
+    }
+
+    &::-webkit-progress-bar {
+        background: #eee;
+    }
+}
+  
+  
+  
+  
+  
+  
+  
