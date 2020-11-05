@@ -27,8 +27,17 @@
     display: flex;
     flex-direction: column;
 
+    .menu_div_container_img {
+        display: flex;
+        justify-content: space-between;
+    }
+
     header, footer, .hscore {
         width: 100%;
+    }
+
+    header {
+        margin-bottom: 50px;
     }
 
     .main, .lboard {
@@ -93,7 +102,7 @@ progress {
 // SVG contenedor -> "play" En animations.js se cambia el display a block y se anima
 #lineDrawing {
     position: relative;
-    top: 25%;
+    top: 10px;
 
     .lines {
         path {
@@ -154,8 +163,8 @@ progress {
         
       }
 
-      // Botones secundarios
-      .btn_secondary {
+    // Botones secundarios
+    .btn_secondary {
         
         text-decoration: none;
 
@@ -174,7 +183,7 @@ progress {
             cursor: pointer;
         }
 
-      }
+    }
 }
 
 

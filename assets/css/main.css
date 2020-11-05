@@ -722,6 +722,17 @@ a {
           flex-direction: column;
 }
 
+#menu_page .menu_div_container_img,
+#settings_page .menu_div_container_img,
+#leaderboard_page .menu_div_container_img {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
 #menu_page header, #menu_page footer, #menu_page .hscore,
 #settings_page header,
 #settings_page footer,
@@ -730,6 +741,12 @@ a {
 #leaderboard_page footer,
 #leaderboard_page .hscore {
   width: 100%;
+}
+
+#menu_page header,
+#settings_page header,
+#leaderboard_page header {
+  margin-bottom: 50px;
 }
 
 #menu_page .main, #menu_page .lboard,
@@ -817,7 +834,7 @@ progress::-webkit-progress-bar {
 
 #lineDrawing {
   position: relative;
-  top: 25%;
+  top: 10px;
 }
 
 #lineDrawing .lines path {
