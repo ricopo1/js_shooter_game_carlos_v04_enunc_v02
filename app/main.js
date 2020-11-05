@@ -28,6 +28,7 @@ const OPPONENT_HEIGHT = 5,
     SHOT_PICTURE_PLAYER = "assets/img/shot1.png",
     SHOT_PICTURE_OPPONENT = "assets/img/characters/char_03.png",
     SHOT_WIDTH = 1.5;
+    PLAYER_LIVES = 3;
 
 
 // Selectores DOM y estado del juego
