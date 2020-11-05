@@ -23,6 +23,21 @@ const animation_ProgressBar = () => {
     });
 };
 
+const animation_PlayToGame = () => {
+
+    
+    lineDrawing = anime({
+        targets: '#lineDrawing .lines path',
+        strokeDashoffset: [anime.setDashoffset, 0],
+        begin: function() {
+            document.querySelector('path').style.display = 'block';
+        },
+        easing: 'easeInOutSine',
+        duration: 3000,
+    });
+    
+};
+
 const animation_FadeIn = () => {
     // Selecciona elementos a animar
     const splash = GAME_UI.pages.splash;
@@ -90,6 +105,11 @@ const animation_SplashToMenu = () => {
             translateY: 0, 
             opacity: 1
         }, '-=750')
+
+    // callback al terminar animación ( se inicia el juego )
+    animation_layout.finished.then(() => {
+        animation_PlayToGame();
+    })
 };
 
 const animation_MenuToMain = (getTo) => {

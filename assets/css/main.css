@@ -703,10 +703,13 @@ a {
   font-size: 2rem;
 }
 
-*:not(a) {
-  border: 1px solid pink;
-}
-
+/*
+    * {
+        &:not(a) {
+            border: 1px solid pink;
+        }
+    } 
+*/
 #menu_page,
 #settings_page,
 #leaderboard_page {
@@ -729,14 +732,19 @@ a {
   width: 100%;
 }
 
-#menu_page .main, #menu_page .slider, #menu_page .lboard,
+#menu_page .main, #menu_page .lboard,
 #settings_page .main,
-#settings_page .slider,
 #settings_page .lboard,
 #leaderboard_page .main,
-#leaderboard_page .slider,
 #leaderboard_page .lboard {
   width: 100%;
+  -ms-flex-preferred-size: 100%;
+      flex-basis: 100%;
+}
+
+#menu_page .slider,
+#settings_page .slider,
+#leaderboard_page .slider {
   -ms-flex-preferred-size: 100%;
       flex-basis: 100%;
 }
@@ -799,5 +807,97 @@ progress::-webkit-progress-value {
 
 progress::-webkit-progress-bar {
   background: #eee;
+}
+
+.my-path {
+  fill: none;
+  stroke: #676B68;
+  stroke-width: 4;
+}
+
+#lineDrawing {
+  position: relative;
+  top: 25%;
+}
+
+#lineDrawing .lines path {
+  display: none;
+}
+
+.inline_menu {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.inline_menu li {
+  list-style: none;
+}
+
+.inline_menu li a span {
+  font-size: 50px;
+  color: #FC6FFF;
+}
+
+#settings_page footer, #leaderboard_page footer, #modal_pause_window footer, #modal_confirm footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+#settings_page .cta, #leaderboard_page .cta, #modal_pause_window .cta, #modal_confirm .cta {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+#settings_page .btn_primary, #leaderboard_page .btn_primary, #modal_pause_window .btn_primary, #modal_confirm .btn_primary {
+  text-decoration: none;
+}
+
+#settings_page .btn_primary button, #leaderboard_page .btn_primary button, #modal_pause_window .btn_primary button, #modal_confirm .btn_primary button {
+  color: #676B68;
+  background-color: white;
+  border: 3px solid #676B68;
+  border-radius: 5px;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+#settings_page .btn_secondary, #leaderboard_page .btn_secondary, #modal_pause_window .btn_secondary, #modal_confirm .btn_secondary {
+  text-decoration: none;
+}
+
+#settings_page .btn_secondary button, #leaderboard_page .btn_secondary button, #modal_pause_window .btn_secondary button, #modal_confirm .btn_secondary button {
+  border: 0px;
+  color: white;
+  background-color: #FC6FFF;
+  border: 3px solid #FC6FFF;
+  border-radius: 5px;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
 }
 /*# sourceMappingURL=main.css.map */

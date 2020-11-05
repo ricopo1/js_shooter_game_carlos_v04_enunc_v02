@@ -83,7 +83,7 @@
             </div>
             <!-- Main page Juego!! -->
             <div class="game">
-                Here comes the gameeee!!
+                
             </div>
         </section>
 
@@ -135,8 +135,10 @@
                 </div>
 
                 <!-- modal ctas -->
-                <a class="btn btn_primary" href="#main_page" navigation-type="modal" animation-type="resume_modal">Back to game</a>
-                <a class="btn btn_secondary" href="#modal_confirm" navigation-type="modal" animation-type="confirm_modal_in">Quit game</a>
+                <div class="cta">
+                    <a class="btn btn_primary" href="#main_page" navigation-type="modal" animation-type="resume_modal"><button>Back to game</button></a>
+                    <a class="btn btn_secondary" href="#modal_confirm" navigation-type="modal" animation-type="confirm_modal_in"><button>Cancelar</button></a>
+                </div>
             </div>
         </section>
 
@@ -164,10 +166,9 @@
                 </div>
 
                 <!-- modal cta -->
-                <div class="cta">
-                    <a class="btn btn_primary" href="#menu_page" navigation-type="animation" animation-type="game_out">Quit</a>
-                    <a class="btn btn_secondary" href="#main_page" navigation-type="modal" animation-type="confirm_modal_out">Cancelar</a>
-                </div>
+                <a class="btn btn_primary" href="#menu_page" navigation-type="animation" animation-type="game_out"><button>Quit</button></a>
+                <a class="btn btn_secondary" href="#main_page" navigation-type="modal" animation-type="confirm_modal_out"><button>Cancelar</button></a>
+                
             </div>
         </section>
 
@@ -190,12 +191,38 @@
                 </header>
 
                 <div class="main">
-                    Página de settings, anímame para ir al menú! <br>
-                    Para ello usa Swiper!
+                    <div class="settings">
+                        <div class="setting">
+                            <div class="setting_icon">
+                                <span class="mdi mdi-volume-high"></span>
+                            </div>
+                            <div class="setting_label">
+                                Background music
+                            </div>
+                            <div class="setting_toggle">
+                                <div class="toggle">
+                                    <span class="mdi mdi-checkbox-blank-circle"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="setting">
+                            <div class="setting_icon">
+                                <span class="mdi mdi-music-note-eighth"></span>
+                            </div>
+                            <div class="setting_label">
+                                Action sounds
+                            </div>
+                            <div class="setting_toggle">
+                                <div class="toggle">
+                                    <span class="mdi mdi-checkbox-blank-circle"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
                 <footer class="footer">
-                    <a href="#menu_page" navigation-type="swipe">Volver al menú (usa swiper)</a>
+                    <a class="btn_primary" href="#menu_page" navigation-type="swipe"><button>Back to menu</button></a>
                 </footer>
             </section>
 
@@ -212,26 +239,36 @@
                 -->
             <section id="menu_page" class="swiper_item swiper-slide">
                 <header class="header">
-                    <h1>Shooter Game</h1>
+                    <h1 style="text-align: center;">Shooter Game</h1>
                 </header>
                 <div class="slider">
-                    Cómo molaría tener aquí alguna animación de los caracteres con SVG!
+                    <div id="lineDrawing">
+                        <a href="#main_page" navigation-type="animation" animation-type="menu_to_game">
+                            <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 456.339 456.339" xml:space="preserve">
+                                <g class="lines">
+                                    <path class="my-path" d="M195.155,337.833c-1.93,0-3.875-0.42-5.693-1.266c-4.717-2.21-7.732-6.952-7.732-12.162v-192.47
+                                        c0-5.21,3.014-9.952,7.732-12.162c4.714-2.21,10.295-1.49,14.292,1.846l115.482,96.235c3.063,2.553,4.833,6.329,4.833,10.316
+                                        c0,3.986-1.769,7.763-4.833,10.316l-115.482,96.235C201.296,336.77,198.24,337.833,195.155,337.833z M208.587,160.603v135.134
+                                        l81.079-67.567L208.587,160.603z"/>
+                                </g>
+                            </svg>
+                        </a>
+                          
+                    </div>
                 </div>
 
                 <footer class="footer">
-                    <a href="#main_page" navigation-type="animation" animation-type="menu_to_game">Para ir al juego, anímame</a>
+                    
                     <div class="foot_navigation">
                         <ul class="inline_menu centered">
                             <li>
                                 <a href="#settings_page" navigation-type="swipe">
                                     <span class="mdi mdi-settings"></span>
-                                    <span class="label">Settings (usa swiper)</span>
                                 </a>
                             </li>
                             <li>
                                 <a href="#leaderboard_page" navigation-type="swipe">
                                     <span class="mdi mdi-signal"></span>
-                                    <span class="label">High Scores (usa swiper)</span>
                                 </a>
                             </li>
                         </ul>
@@ -261,7 +298,7 @@
                     <header class="header">
                         <h2>High Score</h2>
                     </header>
-                    <div class="main">
+                    <div class="main" style="color: #FC6FFF;">
                         2014
                     </div>
                 </section>
@@ -269,47 +306,52 @@
                 <!-- Leaderboard  -->
                 <section class="lboard">
                     <header class="header">
-                        <h2>Leaderboard</h2>
+                        <h2>- Leaderboard -</h2>
                     </header>
                     <div class="main">
                         <div class="lboard_table">
                             <div class="lboard_item">
                                 <div class="lboard_item_name">
-                                    LeaderBoard Item
+                                    Rico
                                 </div>
-                                <div class="lboard_item_p">123</div>
+                                <div class="lboard_item_p" style="color: #FC6FFF;">2014</div>
                             </div>
+                            <hr>
                             <div class="lboard_item">
                                 <div class="lboard_item_name">
-                                    LeaderBoard Item
+                                    Jesus
                                 </div>
-                                <div class="lboard_item_p">123</div>
+                                <div class="lboard_item_p">1233</div>
                             </div>
+                            <hr>
                             <div class="lboard_item">
                                 <div class="lboard_item_name">
-                                    LeaderBoard Item
+                                    Ryan
                                 </div>
-                                <div class="lboard_item_p">123</div>
+                                <div class="lboard_item_p">1123</div>
                             </div>
+                            <hr>
                             <div class="lboard_item you">
                                 <div class="lboard_item_name">
-                                    LeaderBoard Item
+                                    Mary
                                 </div>
-                                <div class="lboard_item_p">123</div>
+                                <div class="lboard_item_p">523</div>
                             </div>
+                            <hr>
                             <div class="lboard_item">
                                 <div class="lboard_item_name">
-                                    LeaderBoard Item
+                                    Ricardo
                                 </div>
                                 <div class="lboard_item_p">123</div>
                             </div>
+                            <hr>
                         </div>
                     </div>
                 </section>
 
                 <!-- Leaderboard back to menu -->
                 <footer class="footer">
-                    <a href="#menu_page" navigation-type="swipe">Volver al menú (usa swiper)</a>
+                    <a class="btn_primary" href="#menu_page" navigation-type="swipe"><button>Back to menu</button></a>
                 </footer>
             </section>
 

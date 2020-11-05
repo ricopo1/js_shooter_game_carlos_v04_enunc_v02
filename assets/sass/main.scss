@@ -12,13 +12,15 @@
 
 
 
+/*
+    * {
+        &:not(a) {
+            border: 1px solid pink;
+        }
+    } 
+*/
 
-* {
-    &:not(a) {
-        border: 1px solid pink;
-    }
-}
-
+// Estilos principales de estructura
 #menu_page,
 #settings_page,
 #leaderboard_page {
@@ -29,8 +31,12 @@
         width: 100%;
     }
 
-    .main, .slider, .lboard {
+    .main, .lboard {
         width: 100%;
+        flex-basis: 100%;
+    }
+
+    .slider {
         flex-basis: 100%;
     }
 }
@@ -52,6 +58,7 @@
     }
 }
 
+// Contenedor imagenes de la pantalla inicial de carga
 #splas_img {
     display: flex;
     flex-direction: column;
@@ -59,6 +66,7 @@
     flex-basis: 100%;
 }
 
+// Barra de progreso de la pantalla de carga inicial
 progress {
     margin-left: 10px;
     position: relative;
@@ -74,6 +82,105 @@ progress {
         background: #eee;
     }
 }
+
+// Estilo del svg
+.my-path {
+    fill:none;
+    stroke:#676B68;
+    stroke-width:4;
+  }
+
+// SVG contenedor -> "play" En animations.js se cambia el display a block y se anima
+#lineDrawing {
+    position: relative;
+    top: 25%;
+
+    .lines {
+        path {
+            display: none;
+        }
+    }
+}
+// Lista iconos menú principal (settings, leaderboard)
+.inline_menu {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+
+    li {
+        list-style: none;
+
+        a {
+
+            span {
+                font-size: 50px;
+                color: #FC6FFF;
+            }
+        }
+    }
+}
+
+// Display y estilo de los botones del juego
+#settings_page, #leaderboard_page, #modal_pause_window, #modal_confirm {
+
+    footer {
+        display: flex;
+        justify-content: center;
+    }
+
+    .cta {
+        display: flex;
+        flex-direction: row;
+    }
+    
+    // Botones no secundarios 
+    .btn_primary {
+
+        text-decoration: none;
+
+        button {
+            color: #676B68;
+            background-color: white;
+            border: 3px solid #676B68;
+            border-radius: 5px;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+        }
+        
+      }
+
+      // Botones secundarios
+      .btn_secondary {
+        
+        text-decoration: none;
+
+        button {
+            border: 0px;
+            color: white;
+            background-color: #FC6FFF;
+            border: 3px solid #FC6FFF;
+            border-radius: 5px;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+        }
+
+      }
+}
+
+
+
+  
+  
   
   
   
